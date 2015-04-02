@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Project name</title>
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	
+	<body>
+		<div class="container">
+
+			<!-- Static navbar -->
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand">Project name</a>
+					</div>
+
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="{{ url_for('index') }}">Home</a></li>
+							<li><a href="{{ url_for('query_item') }}">Query</a></li>
+							<li><a href="{{ url_for('add_item') }}">Add</a></li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div><!--/.container-fluid -->
+			</nav>
+
+			<div class="jumbotron">
+
+				{% block content %}
+				{% endblock %}
+
+				{% if error %}
+					<p><strong>Error:</strong> {{ error }}</p>
+				{% endif %}
+
+				{% for message in get_flashed_messages() %}
+					<p>{{ message }}</p>
+				{% endfor %}
+
+			</div>
+
+		</div> <!-- /container -->
+
+		<script src="/static/js/jquery-2.1.3.min.js"></script>
+		<script src="/static/js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+		<h1>Index page</h1>
+		
+		{% if items %}
+			{% for item in items %}
+				<h2>{{item.name}}</h2>
+				<p>{{item.description}}</p><br />
+			{% endfor %}
+		{% endif %}
+{% endblock %}
