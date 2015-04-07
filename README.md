@@ -11,14 +11,10 @@ Install
 -------
 Its advised that you use virtualenv or equivalent.
 
-Setup the virtual python environment and activate it:
+To setup the virtual python environment and activate it:
 
 	virtualenv venv
 	. venv/bin/activate
-
-To deactivate the virtualenv just type:
-	
-	deactivate
 
 Download and install requirements:
 
