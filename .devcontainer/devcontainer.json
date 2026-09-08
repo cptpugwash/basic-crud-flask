@@ -1,0 +1,21 @@
+{
+	"name": "basic-crud-flask",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile"
+	},
+	"forwardPorts": [5000],
+	"portsAttributes": {
+		"5000": {
+			"label": "Flask app",
+			"onAutoForward": "openBrowser"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python"
+			]
+		}
+	}
+}
