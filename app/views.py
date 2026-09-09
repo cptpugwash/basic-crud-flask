@@ -1,7 +1,7 @@
 from flask import render_template, url_for, flash
 from app import app, db
-from models import items
-from forms import queryform, itemform
+from app.models import items
+from app.forms import queryform, itemform
 
 @app.route('/')
 def index():
