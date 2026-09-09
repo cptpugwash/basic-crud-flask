@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-bs-theme="light">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +7,29 @@
 		<title>Project name</title>
 		<link href="/static/css/bootstrap.min.css" rel="stylesheet">
 	</head>
-	
+
 	<body>
 		<div class="container">
 
 			<!-- Static navbar -->
-			<nav class="navbar navbar-default">
+			<nav class="navbar navbar-expand-lg bg-body-tertiary">
 				<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand">Project name</a>
-					</div>
+					<a class="navbar-brand" href="{{ url_for('index') }}">Project name</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-					<div id="navbar" class="navbar-collapse collapse">
-						<ul class="nav navbar-nav">
-							<li><a href="{{ url_for('index') }}">Home</a></li>
-							<li><a href="{{ url_for('query_item') }}">Query</a></li>
-							<li><a href="{{ url_for('add_item') }}">Add</a></li>
+					<div id="navbar" class="collapse navbar-collapse">
+						<ul class="navbar-nav">
+							<li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ url_for('query_item') }}">Query</a></li>
+							<li class="nav-item"><a class="nav-link" href="{{ url_for('add_item') }}">Add</a></li>
 						</ul>
 					</div><!--/.nav-collapse -->
 				</div><!--/.container-fluid -->
 			</nav>
 
-			<div class="jumbotron">
+			<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 
 				{% block content %}
 				{% endblock %}
@@ -45,7 +46,6 @@
 
 		</div> <!-- /container -->
 
-		<script src="/static/js/jquery-2.1.3.min.js"></script>
-		<script src="/static/js/bootstrap.min.js"></script>
+		<script src="/static/js/bootstrap.bundle.min.js"></script>
 	</body>
 </html>
